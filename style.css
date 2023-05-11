@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --square-height: 40px;
+  --square-height: 40px;
+  --square-radius: 4px;
+  --square-rotation: rotate(45deg);
+  --square-z-index: 3;
+  --square-margin: 6px;
+  --logo-transition: transform 0.6s ease-out;
+}
+
+html,
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+#logo {
+  height: 111px;
+  width: 111px;
+  background: linear-gradient(#9209d8, #7806b4);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--logo-transition);
+}
+
+#logo:hover {
+  transform: scale(2);
+}
+
+#logo:hover #squares-container {
+  transform: rotateY(180deg) scale(1.5);
+}
+
+#logo:hover #squares-container #square-line {
+  transform: rotate(135deg);
+}
+
+#logo:hover #squares-container #square-fill {
+  transform: rotate(-135deg);
+}
+
+#squares-container {
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: var(--logo-transition);
+}
+
+#square-line {
+  height: var(--square-height);
+  width: var(--square-height);
+  background-color: #ecd0f6;
+  border-radius: var(--square-radius);
+  transform: var(--square-rotation);
+  z-index: var(--square-z-index);
+  margin-left: var(--square-margin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--logo-transition);
+}
+
+#square-line--inner {
+  height: 30px;
+  width: 30px;
+  background-color: #8707c9;
+  border-radius: 1.5px;
+  align-items: center;
+  justify-content: center;
+}
+
+#square-fill {
+  height: var(--square-height);
+  width: var(--square-height);
+  background-color: #fff;
+  border-radius: var(--square-radius);
+  transform: var(--square-rotation);
+  z-index: var(--square-z-index);
+  margin-right: var(--square-margin);
+  position: absolute;
+  right: 0;
+  box-shadow: 0px 0px 15px -3px rgba(135, 6, 201, 1);
+  transition: all 1s ease-in-out;
+}
